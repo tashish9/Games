@@ -1,10 +1,8 @@
 /* eslint-disable react/display-name */
-import { useFormikContext } from "formik";
-import { memo, useEffect } from "react";
 import { useWordleStore } from "@store";
+import { memo } from "react";
 
 const WordleInputBlock = memo(({ value }: { value?: string }) => {
-  // console.log(value);
   return (
     <div className="h-13 w-13 border-2 font-bold text-center border-gray-400 text-3xl outline-none grid place-items-center ">
       {value}

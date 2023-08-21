@@ -8,13 +8,11 @@ type WordleState = {
 
 export const useWordleStore = create<WordleState>((set) => ({
   activeRow: 0,
-  words: Array.from({ length: 6 }, () => Array(5).fill("")), // Create a new array for each row
+  words: Array.from({ length: 6 }, () => Array(5).fill("")),
   updateWord: (c, val) => {
     set((state) => {
-      const curr = state.words.map((row) => [...row]); // Create a shallow copy of the array
-      console.log(curr);
+      const curr = state.words.map((row) => [...row]);
       curr[state.activeRow][c] = val;
-      console.log(curr);
       return {
         ...state,
         words: curr,
